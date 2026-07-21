@@ -1,3 +1,5 @@
 bunnylol
 # config.json now lives in ~/.config/bunnylol (managed by dotfiles), not the repo
 config.json
+# local env (docker compose auto-loads it) — never commit
+.env
