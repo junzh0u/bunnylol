@@ -2,5 +2,5 @@ bunnylol
 .git/
 .gitignore
 CLAUDE.md
-docker-compose.yml
+compose.yaml
 .github/

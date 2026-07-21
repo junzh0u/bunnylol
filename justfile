@@ -22,6 +22,6 @@ build:
 # Deploy to remote host: sync compose file, pull latest image, restart.
 # Config lives in ~/.config/bunnylol on the host, kept in sync by dotfiles.
 deploy host="gateway" dir="bunnylol":
-    scp docker-compose.yml {{ host }}:{{ dir }}/docker-compose.yml
+    scp compose.yaml {{ host }}:{{ dir }}/compose.yaml
     ssh {{ host }} "cd {{ dir }} && docker compose pull --quiet && docker compose up -d --remove-orphans && docker image prune -f"
     ssh {{ host }} "cd {{ dir }} && docker compose ps"

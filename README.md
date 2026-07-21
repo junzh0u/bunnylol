@@ -73,7 +73,7 @@ http://localhost:8080/?q=%s
 ## Deployment
 
 Every push to `main` builds and publishes `ghcr.io/junzh0u/bunnylol:latest`
-via GitHub Actions. `docker-compose.yml` runs that image:
+via GitHub Actions. `compose.yaml` runs that image:
 
 ```bash
 docker compose up -d          # PORT defaults to 4000
