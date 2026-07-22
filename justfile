@@ -1,3 +1,5 @@
+set fallback := true
+
 # Run the server (default port 8080, config from ~/.config/bunnylol)
 run *args:
     BUNNYLOL_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/bunnylol/config.json" go run main.go {{args}}
@@ -18,10 +20,3 @@ fix:
 # Build the binary
 build:
     go build -o bunnylol
-
-# Deploy to remote host: sync compose file, pull latest image, restart.
-# Config lives in ~/.config/bunnylol on the host, kept in sync by dotfiles.
-deploy host="gateway" dir="bunnylol":
-    scp compose.yaml {{ host }}:{{ dir }}/compose.yaml
-    ssh {{ host }} "cd {{ dir }} && docker compose pull --quiet && docker compose up -d --remove-orphans && docker image prune -f"
-    ssh {{ host }} "cd {{ dir }} && docker compose ps"

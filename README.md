@@ -81,8 +81,7 @@ docker compose up -d          # PORT defaults to 4000
 
 The container reads its config from a **directory** bind-mount at
 `/app/config` (a directory, not a single file, so atomic-save hot reloads
-still work). `just deploy [host] [dir]` syncs the compose file to a remote
-host, pulls the latest image, and restarts.
+still work).
 
 ## License
 
