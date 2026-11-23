@@ -43,8 +43,7 @@ picked up within ~2s, no restart needed.
 
 - **`Default`** — fallback URL template with a `%s` placeholder (required).
 - **`Keywords`** — map of prefix keyword → URL template.
-- **`Regexes`** — ordered list of `{ "pattern", "url" }` routes, matched against
-  the whole query.
+- **`Regexes`** — ordered list of `{ "pattern", "url" }` routes, tried on the whole query. Patterns are Go (RE2) syntax and match anywhere in it unless anchored: wrap one in `^…$` to match the whole query, and start it with `(?i)` to ignore case. The first match wins and gets the whole query.
 
 ## Running
 
