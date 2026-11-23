@@ -9,5 +9,5 @@ services:
       - "${PORT:-4000}:${PORT:-4000}"
     volumes:
       # Directory (not single-file) mount so the config watcher sees hot-reload
-      # updates. Kept in sync across hosts by dotfiles (~/.config -> ~/.dotfiles/.config).
+      # updates when the file is replaced by an atomic save.
       - ${HOME}/.config/bunnylol:/app/config:ro
